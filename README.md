@@ -105,7 +105,7 @@ GAN (generative adversarial network) 이전에 등장한 생성 모델이며, �
 
 ## 결과
 * VAE 결과<br><br>
-<img src="images/img1.png" width="60%"><br><br>
+<img src="images/img1.png" width="40%"><br><br>
 * t-SNE를 통한 VAE 잠재 변수 가시화 결과<br><br>
 <img src="images/img2.png" width="60%"><br><br>
 * 3, 7 잠재 변수 변화에 따른 생성 데이터 가시화(Walking in latent space)<br><br>
