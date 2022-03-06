@@ -32,12 +32,12 @@ GAN (generative adversarial network) 이전에 등장한 생성 모델이며, �
     * 중간에 중단 된 모델 이어서 학습 시
         <br>주의사항: config.json을 수정해야하는 일이 발생 한다면 base_path/config.json이 아닌, base_path/model/{model_name}/{model_name}.json 파일을 수정해야 합니다.
         ```
-        python3 main.py -d gpu -m train -c 1 -n my_autoencoder
+        python3 main.py -d gpu -m train -c 1 -n {model_name}
         ```
     * 학습 된 모델 결과 볼 때
         <br>주의사항: config.json을 수정해야하는 일이 발생 한다면 base_path/config.json이 아닌, base_path/model/{model_name}/{model_name}.json 파일을 수정해야 수정사항이 반영됩니다.
         ```
-        python3 main.py -d cpu -m test -n my_autoencoder
+        python3 main.py -d cpu -m test -n {model_name}
         ```
     <br><br>
 
@@ -93,7 +93,7 @@ GAN (generative adversarial network) 이전에 등장한 생성 모델이며, �
     <br><br>
 
     * ### 모델 학습 결과 가시화 관련
-        * result_num: 확인하고자 하는 autoencoder의 복구 결과 이미지 수. 랜덤으로 test set 중 설정한 result_num 수 만큼 추출하여 결과 이미지를 보여줌.
+        * result_num: 확인하고자 하는 VAE의 복구 결과 이미지 수. 랜덤으로 test set 중 설정한 result_num 수 만큼 추출하여 결과 이미지를 보여줌.
         * result_img_name: 위의 결과를 저장할 이미지 파일 이름. result/{result_img_name} 으로 저장.
         * visualization_tsne: {0, 1} 중 선택. t-SNE를 통한 test set의 latent variable을 가시화 하려면 1, 아니면 0으로 설정(현재 label 데이터가 있는 MNIST 데이터에 대해서만 가시화, 사용자 지정 데이터의 label이 있다면 train.py의 test 함수 코드를 수정하여 사용, 즉 MNIST_train = 1 이어야 함).
         * visualization_tsne_img_name: 위에서 t-SNE를 가시화 한다면, 그 결과를 저장할 이미지 파일 이름. result/{visualization_img_name} 으로 저장.
