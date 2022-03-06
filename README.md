@@ -5,8 +5,8 @@ GAN (generative adversarial network) 이전에 등장한 생성 모델이며, �
 <br><br><br>
 
 ## 모델 종류
-* ### Vanilla Autoencoder
-    Linear layer를 사용한 vanilla autoencoder가 구현되어 있습니다.
+* ### Vanilla VAE
+    Linear layer를 사용한 vanilla VAE가 구현되어 있습니다.
 <br><br><br>
 
 ## 사용 데이터
@@ -108,7 +108,7 @@ GAN (generative adversarial network) 이전에 등장한 생성 모델이며, �
 ![AE results](images/img1.png)<br><br>
 * t-SNE를 통한 VAE 잠재 변수 가시화 결과<br><br>
 ![AE results](images/img2.png)<br><br>
-* 3, 7 잠재 변수 변화 가시화(Walking in latent space)<br><br>
+* 3, 7 잠재 변수 변화에 따른 생성 데이터 가시화(Walking in latent space)<br><br>
 ![AE results](images/img3.png)
 <br><br><br>
 
