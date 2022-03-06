@@ -2,7 +2,7 @@ import torch
 import os
 from PIL import Image
 from tqdm import tqdm
-
+import numpy as np
 
 
 def save_checkpoint(file, model, optimizer):
@@ -24,6 +24,12 @@ def VAE_loss(x, output, mu, log_var, decoder_loss):
     KLD_loss = 0.5 * torch.sum((torch.square(mu) + torch.exp(log_var) - log_var - 1))
 
     return BCE_loss + KLD_loss
+
+
+def make_z(mu, log_var):
+    std = np.exp(0.5 * log_var)
+    eps = torch.randn_like(torch.Tensor(std))
+    return mu + std*eps.numpy()
 
 
 

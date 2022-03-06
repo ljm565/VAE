@@ -59,7 +59,7 @@ def main(config_path:Config, args:ArgumentParser):
     elif args.mode == 'test':
         print('test starting...\n')
         os.makedirs(base_path+'result', exist_ok=True)
-        trainer.test(config.result_num, config.visualization)
+        trainer.test(config.result_num, config.visualization_tsne, config.walking_latent_space)
             
 
 
