@@ -5,3 +5,4 @@ loss/
 data/
 MNIST/
 result/
+.DS_Store
