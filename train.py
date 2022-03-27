@@ -54,6 +54,9 @@ class Trainer:
             # for reproducibility
             torch.manual_seed(999)
 
+            # set to MNIST size
+            self.config.width, self.config.height = 28, 28
+
             self.MNIST_valset_proportion = self.config.MNIST_valset_proportion
             self.trainset = dsets.MNIST(root=self.base_path, transform=transforms.ToTensor(), train=True, download=True)
             self.trainset, self.valset = random_split(self.trainset, [len(self.trainset)-int(len(self.trainset)*self.MNIST_valset_proportion), int(len(self.trainset)*self.MNIST_valset_proportion)])
