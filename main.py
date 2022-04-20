@@ -1,7 +1,6 @@
 import torch
 import pickle
 from argparse import ArgumentParser
-import numpy as np
 import os
 from train import Trainer
 from config import Config
