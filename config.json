@@ -5,9 +5,9 @@
 
     "custom_data_proportion": [0.7, 0.3],
     "two_folders": ["val", "test"],
-    "train_data_path":"/Users/ljm/Desktop/train/",
-    "val_data_path":"/Users/ljm/Desktop/val/",
-    "test_data_path":"/Users/ljm/Desktop/test/",
+    "train_data_path":"",
+    "val_data_path":"",
+    "test_data_path":"",
 
 
     "base_path": "./",
