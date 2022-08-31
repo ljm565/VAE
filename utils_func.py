@@ -8,6 +8,7 @@ import numpy as np
 def save_checkpoint(file, model, optimizer):
     state = {'model': model.state_dict(), 'optimizer': optimizer.state_dict()}
     torch.save(state, file)
+    print('model pt file is being saved\n')
 
 
 def make_img_data(path, trans):

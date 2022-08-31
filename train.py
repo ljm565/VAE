@@ -189,7 +189,6 @@ class Trainer:
                         best_val_loss = epoch_loss
                         best_model_wts = copy.deepcopy(self.model.state_dict())
                         best_epoch = best_epoch_info + epoch + 1
-                        print('model pt file is being saved\n')
                         save_checkpoint(self.model_path, self.model, self.optimizer)
             
             print("time: {} s\n".format(time.time() - start))
