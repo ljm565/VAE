@@ -112,8 +112,3 @@ GAN (generative adversarial network) 이전에 등장한 생성 모델이며, �
 ![AE results](images/img3.png)
 <br><br><br>
 
-
-## License
-© 2022. Jun-Min Lee. All rights reserved.<br>
-ljm56897@gmail.com, ljm565@kaist.ac.kr, ljm565@naver.com
-
