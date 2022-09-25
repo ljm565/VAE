@@ -14,6 +14,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import os 
+import sys
 
 from config import Config
 from utils_func import save_checkpoint, make_img_data, VAE_loss, make_z
@@ -103,7 +104,7 @@ class Trainer:
                         self.valset, self.testset = random_split(data2, [self.val_len, self.test_len], generator=torch.Generator().manual_seed(999))
                     else:
                         print("two folders must be ['train', 'val] or ['val', 'test']")
-                        raise AssertionError
+                        sys.exit()
 
                 elif len(self.custom_data_proportion) == 1:
                     self.trainset = make_img_data(self.config.train_data_path, self.trans)
@@ -202,7 +203,7 @@ class Trainer:
     def test(self, result_num, visualization, walking_latent_space):
         if result_num > len(self.dataloaders['test'].dataset):
             print('The number of results that you want to see are larger than total test set')
-            raise AssertionError
+            sys.exit()
         
         
         # concatenate all testset for t-sne and results
@@ -263,7 +264,7 @@ class Trainer:
         # visualization
         if (visualization and not self.config.MNIST_train) or (walking_latent_space and not self.config.MNIST_train):
             print('Now visualization is possible only for MNIST dataset. You can revise the code for your own dataset and its label..')
-            raise AssertionError
+            sys.exit()
 
 
         if visualization:        

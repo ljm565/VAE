@@ -5,6 +5,7 @@ import os
 from train import Trainer
 from config import Config
 import json
+import sys
 
 
 
@@ -21,7 +22,7 @@ def main(config_path:Config, args:ArgumentParser):
             print('*'*36)
             print('There is no [-n, --name] argument')
             print('*'*36)
-            raise AssertionError
+            sys.exit()
     else:
         config = Config(config_path)
         base_path = config.base_path
@@ -53,12 +54,15 @@ def main(config_path:Config, args:ArgumentParser):
         print('Saving the loss related data...')
         with open(loss_data_path, 'wb') as f:
             pickle.dump(loss_data, f)
-    
 
     elif args.mode == 'test':
         print('test starting...\n')
         os.makedirs(base_path+'result', exist_ok=True)
         trainer.test(config.result_num, config.visualization_tsne, config.walking_latent_space)
+        
+    else:
+        print("Please select mode between 'train', and 'test'")
+        sys.exit()
             
 
 
