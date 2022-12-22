@@ -7,6 +7,7 @@ import torchvision.transforms as transforms
 from torchvision.utils import make_grid
 import copy
 import time
+import random
 import pickle
 import math
 from sklearn.manifold import TSNE
@@ -238,11 +239,8 @@ class Trainer:
 
         # select random index of the data
         ids = set()
-        while 1:
-            if len(ids) == result_num:
-                break
-            id = np.random.randint(1, high=len(total_output))
-            ids.add(id)
+        while len(ids) != result_num:
+            ids.add(random.randrange(len(total_output)))
         ids = list(ids)
 
 
