@@ -46,7 +46,7 @@ This repository is structured as follows.
     |   └── trainer.py              <- Class for training, evaluating, and visualizing with t-SNE
     |
     └── uitls                   
-        ├── __init__.py             <- Files for initializing the logger, versioning, etc.
+        ├── __init__.py             <- File for initializing the logger, versioning, etc.
         ├── data_utils.py           <- File defining the custom dataset dataloader
         ├── filesys_utils.py       
         └── training_utils.py     
@@ -56,7 +56,7 @@ This repository is structured as follows.
 ## Tutorials & Documentations
 Please follow the steps below to train the VAE.
 
-1. [Getting Start](./docs/1_getting_start.md)
+1. [Getting Started](./docs/1_getting_started.md)
 2. [Data Preparation](./docs/2_data_preparation.md)
 3. [Training](./docs/3_trainig.md)
 4. ETC
