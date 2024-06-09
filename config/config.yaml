@@ -1,0 +1,44 @@
+# base
+seed: 0
+deterministic: True
+
+# environment config
+device: cpu     # examples: [0], [0,1], [1,2,3], cpu... 
+
+# project config
+project: outputs/AE
+name: MNIST
+
+# image setting config
+height: 28
+width: 28
+color_channel: 1
+convert2grayscale: False
+
+# data config
+workers: 0              # Don't worry to set worker. The number of workers will be set automatically according to the batch size.
+MNIST_train: True       # if True, MNIST will be loaded automatically.
+MNIST:
+    path: data/
+    MNIST_valset_proportion: 0.2      # MNIST has only train and test data. Thus, part of the training data is used as a validation set.
+CUSTOM:
+    train_data_path: null
+    validation_data_path: null
+    test_data_path: null
+
+# train config
+batch_size: 128
+epochs: 10
+lr: 0.001
+hidden_dim: 512
+latent_dim: 10      # dimension of latent space.
+dropout: 0
+
+# logging config
+common: ['train_loss', 'validation_loss']
+
+# t-sne visualiztion config
+result_num: 10
+
+# latent space
+numbers: [3, 7]
