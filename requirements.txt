@@ -1,0 +1,5 @@
+sconf==0.2.5
+matplotlib==3.4.2
+numpy==1.21.1
+scikit-learn==1.2.1
+tqdm==4.62.2

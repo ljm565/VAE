@@ -6,7 +6,7 @@ deterministic: True
 device: cpu     # examples: [0], [0,1], [1,2,3], cpu... 
 
 # project config
-project: outputs/AE
+project: outputs/VAE
 name: MNIST
 
 # image setting config

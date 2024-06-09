@@ -162,7 +162,7 @@ class Trainer:
 
         # init progress bar
         if RANK in (-1, 0):
-            pbar = init_train_progress_bar(train_loader, self.is_rank_zero, ['MSE Loss'], nb)
+            pbar = init_train_progress_bar(train_loader, self.is_rank_zero, ['VAE Loss'], nb)
 
         for i, (x, _) in pbar:
             self.train_cur_step += 1
@@ -176,8 +176,8 @@ class Trainer:
             self.optimizer.step()
 
             if self.is_rank_zero:
-                self.training_logger.update(phase, epoch+1, self.train_cur_step, batch_size, **{'train_loss': loss.item()})
-                loss_log = [loss.item()]
+                self.training_logger.update(phase, epoch+1, self.train_cur_step, batch_size, **{'train_loss': loss.item()/batch_size})
+                loss_log = [loss.item()/batch_size]
                 msg = tuple([f'{epoch + 1}/{self.epochs}'] + loss_log)
                 pbar.set_description(('%15s' * 1 + '%15.4g' * len(loss_log)) % msg)
             
@@ -193,7 +193,7 @@ class Trainer:
             is_training_now=True
         ):
         def _init_headline():
-            header = tuple(['Epoch'] + ['MSE Loss'])
+            header = tuple(['Epoch'] + ['VAE Loss'])
             LOGGER.info(('\n' + '%15s' * 2) % header)
 
         def _get_val_pbar(dloader, nb):
@@ -219,10 +219,10 @@ class Trainer:
                         epoch, 
                         self.train_cur_step if is_training_now else 0, 
                         batch_size, 
-                        **{'validation_loss': loss.item()}, 
+                        **{'validation_loss': loss.item()/batch_size}, 
                     )
 
-                    loss_log = [loss.item()]
+                    loss_log = [loss.item()/batch_size]
                     msg = tuple([f'{epoch + 1}/{self.epochs}'] + loss_log)
                     pbar.set_description(('%15s' * 1 + '%15.4g' * len(loss_log)) % msg)
                 
