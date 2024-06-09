@@ -21,8 +21,13 @@ For an explanation of VAEs, refer to [Variational Autoencoder (VAE)](https://ljm
 However, implementing a custom dataloader may require additional coding work in `src/utils/data_utils.py`.
 <br><br><br>
 
+## Quick Start
+```bash
+python3 src/run/train.py --config config/config.yaml --mode train
+```
+<br><br>
 
-## Project Structure
+## Project Tree
 This repository is structured as follows.
 ```
 ├── configs                         <- Folder for storing config files
