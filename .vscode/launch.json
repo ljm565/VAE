@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/run/train.py",
+            "args": ["--config", "config/config.yaml", "--mode", "train"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "resume",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/run/train.py",
+            "args": ["--config", "config/config.yaml", "--mode", "resume", "-r", "outputs/VAE/MNIST"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "validation",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/run/validation.py",
+            "args": ["-r", "outputs/VAE/MNIST", "-l", "loss"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "latent visualization",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/run/latent_visualization.py",
+            "args": ["-r", "outputs/VAE/MNIST", "-l", "loss"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
