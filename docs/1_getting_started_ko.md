@@ -1,4 +1,4 @@
-# Getting Start
+# Getting Started
 여기서는 도커 환경 구성에 대한 방법을 제공하지 않습니다.
 여기서는 Anaconda 환경을 구성하는 방법을 제공합니다.
 

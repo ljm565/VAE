@@ -1,4 +1,4 @@
-# Getting Start
+# Getting Started
 Docker environment setup is not provided separately.
 Here, we provide instructions for setting up a anconda environment.
 
