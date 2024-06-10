@@ -7,7 +7,7 @@ from utils import LOGGER, TQDM
 
 
 
-def init_train_progress_bar(dloader, is_rank_zero, loss_names, nb):
+def init_progress_bar(dloader, is_rank_zero, loss_names, nb):
     if is_rank_zero:
         header = tuple(['Epoch'] + loss_names)
         LOGGER.info(('\n' + '%15s' * (1 + len(loss_names))) % header)

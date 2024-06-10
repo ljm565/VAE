@@ -15,7 +15,7 @@ from torchvision.utils import make_grid
 
 from tools import TrainingLogger
 from trainer.build import get_model, get_data_loader
-from utils import TQDM, RANK, LOGGER, colorstr, init_seeds
+from utils import RANK, LOGGER, colorstr, init_seeds
 from utils.filesys_utils import *
 from utils.training_utils import *
 
@@ -162,7 +162,7 @@ class Trainer:
 
         # init progress bar
         if RANK in (-1, 0):
-            pbar = init_train_progress_bar(train_loader, self.is_rank_zero, ['VAE Loss'], nb)
+            pbar = init_progress_bar(train_loader, self.is_rank_zero, ['VAE Loss'], nb)
 
         for i, (x, _) in pbar:
             self.train_cur_step += 1
@@ -192,19 +192,11 @@ class Trainer:
             epoch: int,
             is_training_now=True
         ):
-        def _init_headline():
-            header = tuple(['Epoch'] + ['VAE Loss'])
-            LOGGER.info(('\n' + '%15s' * 2) % header)
-
-        def _get_val_pbar(dloader, nb):
-            _init_headline()
-            return TQDM(enumerate(dloader), total=nb)
-        
         with torch.no_grad():
             if self.is_rank_zero:
                 val_loader = self.dataloaders[phase]
                 nb = len(val_loader)
-                pbar = _get_val_pbar(val_loader, nb)
+                pbar = init_progress_bar(val_loader, self.is_rank_zero, ['VAE Loss'], nb)
 
                 self.model.eval()
 
