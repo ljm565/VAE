@@ -10,7 +10,7 @@ from tqdm import tqdm as tqdm_original
 import torch
 
 
-LOGGING_NAME = 'Autoencoder_2.0'
+LOGGING_NAME = 'VAE_2.0'
 VERBOSE = True
 RANK = int(os.getenv('RANK', -1))
 MACOS, LINUX, WINDOWS = (platform.system() == x for x in ['Darwin', 'Linux', 'Windows'])  # environment booleans
