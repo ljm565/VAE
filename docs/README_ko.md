@@ -68,10 +68,10 @@ python3 src/run/train.py --config config/config.yaml --mode train
 
 ## Training Results
 * VAE 결과<br><br>
-<img src="docs/figs/img1.png" width="40%"><br><br>
+<img src="./figs/img1.png" width="40%"><br><br>
 * t-SNE를 통한 VAE 잠재 변수 가시화 결과<br><br>
-<img src="docs/figs/img2.png" width="60%"><br><br>
+<img src="./figs/img2.png" width="60%"><br><br>
 * 3, 7 잠재 변수 변화에 따른 생성 데이터 가시화(Walking in latent space)<br><br>
-![VAE results](docs/figs/img3.png)
+![VAE results](./figs/img3.png)
 <br><br><br>
 
