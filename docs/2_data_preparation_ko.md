@@ -20,7 +20,7 @@ CUSTOM:
 만약 custom 데이터를 학습하고 싶다면 아래처럼 `config/config.yaml`의 `MNIST_train`을 `False`로 설정하면 됩니다.
 다만 `src/utils/data_utils.py`에 custom dataloader를 구현해야할 수 있습니다.
 ```yaml
-MNIST_train: True       
+MNIST_train: False       
 MNIST:
     path: data/
     MNIST_valset_proportion: 0.2 

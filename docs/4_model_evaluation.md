@@ -15,5 +15,5 @@ There are several arguments for running `src/run/validation.py`:
 #### 1.2 Command
 `src/run/validation.py` file is used to evaluate the model with the following command:
 ```bash
-python3 src/run/validation.py --config --resume_model_dir {$project}/{$name}
+python3 src/run/validation.py --resume_model_dir {$project}/{$name}
 ```

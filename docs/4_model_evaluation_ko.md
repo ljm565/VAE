@@ -15,5 +15,5 @@
 #### 1.2 Command
 `src/run/validation.py` 파일로 다음과 같은 명령어를 통해 학습된 모델을 평가합니다.
 ```bash
-python3 src/run/validation.py --config --resume_model_dir {$project}/{$name}
+python3 src/run/validation.py --resume_model_dir {$project}/{$name}
 ```

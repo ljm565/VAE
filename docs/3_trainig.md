@@ -1,5 +1,5 @@
 # Training VAE
-Here, we provide guides for training VAE models.
+Here, we provide guides for training a VAE model.
 
 ### 1. Configuration Preparation
 To train an VAE model, you need to create a configuration.

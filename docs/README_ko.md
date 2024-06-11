@@ -23,7 +23,7 @@ python3 src/run/train.py --config config/config.yaml --mode train
 <br><br>
 
 ## Project Tree
-This repository is structured as follows.
+본 레포지토리는 아래와 같은 구조로 구성됩니다.
 ```
 ├── configs                         <- Config 파일들을 저장하는 폴더
 │   └── *.yaml
@@ -55,7 +55,7 @@ This repository is structured as follows.
 
 
 ## Tutorials & Documentations
-오토인코더 모델 학습을 위해서 다음 과정을 따라주시기 바랍니다
+오토인코더 모델 학습을 위해서 다음 과정을 따라주시기 바랍니다.
 
 1. [Getting Started](./1_getting_start_ko.md)
 2. [Data Preparation](./2_data_preparation_ko.md)
