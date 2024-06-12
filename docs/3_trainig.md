@@ -2,7 +2,7 @@
 Here, we provide guides for training a VAE model.
 
 ### 1. Configuration Preparation
-To train an VAE model, you need to create a configuration.
+To train a VAE model, you need to create a configuration.
 Detailed descriptions and examples of the configuration options are as follows.
 
 ```yaml
