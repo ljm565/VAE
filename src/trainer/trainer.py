@@ -93,12 +93,11 @@ class Trainer:
             return model
 
         # init model and tokenizer
-        resume_success = False
         do_resume = mode == 'resume' or (mode == 'validation' and self.resume_path)
         model = get_model(config, self.device)
 
         # resume model or resume model after applying peft
-        if do_resume and not resume_success:
+        if do_resume:
             model = _resume_model(self.resume_path, self.device, config.is_rank_zero)
 
         # init ddp
@@ -229,7 +228,7 @@ class Trainer:
                     self.training_logger.save_logs(self.save_dir)
         
 
-    def test(self, phase, result_num):
+    def latent_visualization(self, phase, result_num):
         if result_num > len(self.dataloaders[phase].dataset):
             LOGGER.info(colorstr('red', 'The number of results that you want to see are larger than total test set'))
             sys.exit()
@@ -268,10 +267,7 @@ class Trainer:
         LOGGER.info(colorstr('green', f'testset loss: {test_loss/len(self.dataloaders[phase].dataset)}'))
 
         # select random index of the data
-        ids = set()
-        while len(ids) != result_num:
-            ids.add(random.randrange(len(total_output)))
-        ids = list(ids)
+        ids = random.sample(range(len(total_output)), result_num)
 
         # save the result img 
         LOGGER.info('start result drawing')
