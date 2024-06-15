@@ -79,7 +79,11 @@ class Trainer:
 
     def _init_model(self, config, mode):
         def _resume_model(resume_path, device, is_rank_zero):
-            checkpoints = torch.load(resume_path, map_location=device)
+            try:
+                checkpoints = torch.load(resume_path, map_location=device)
+            except RuntimeError:
+                LOGGER.warning(colorstr('yellow', 'cannot be loaded to MPS, loaded to CPU'))
+                checkpoints = torch.load(resume_path, map_location=torch.device('cpu'))
             model.load_state_dict(checkpoints['model'])
             del checkpoints
             torch.cuda.empty_cache()
