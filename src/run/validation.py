@@ -34,7 +34,11 @@ def main(args):
 
     
 def validation(args, config):
-    device = torch.device('cpu') if config.device == 'cpu' else torch.device(f'cuda:{config.device[0]}')
+    if config.device == 'mps':
+        device = torch.device('mps:0')
+    else:
+        device = torch.device('cpu') if config.device == 'cpu' else torch.device(f'cuda:{config.device[0]}')
+        
     trainer = Trainer(
         config, 
         'validation', 

@@ -11,7 +11,7 @@ seed: 0
 deterministic: True
 
 # environment config
-device: cpu                 # You can DDP training with multiple gpus. e.g. gpu: [0], [0,1], [1,2,3], cpu: cpu
+device: cpu                 # You can DDP training with multiple gpus. e.g. gpu: [0], [0,1], [1,2,3], cpu: cpu, mac: mps
 
 # project config
 project: outputs/VAE         # Project directory
