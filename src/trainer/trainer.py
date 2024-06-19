@@ -233,7 +233,7 @@ class Trainer:
             LOGGER.info(colorstr('red', 'The number of results that you want to see are larger than total test set'))
             sys.exit()
 
-        # makd directory
+        # make directory
         vis_save_dir = os.path.join(self.config.save_dir, 'vis_outputs') 
         os.makedirs(vis_save_dir, exist_ok=True)
         
