@@ -46,7 +46,7 @@ def validation(args, config):
         resume_path=choose_proper_resume_model(args.resume_model_dir, args.load_model_type) if args.resume_model_dir else None
     )
 
-    trainer.latent_visualization(args.dataset_type, config.result_num)
+    trainer.latent_visualization(args.dataset_type, args.result_num)
 
 
 
@@ -56,6 +56,7 @@ if __name__ == '__main__':
     parser.add_argument('-r', '--resume_model_dir', type=str, required=False)
     parser.add_argument('-l', '--load_model_type', type=str, default='metric', required=False, choices=['metric', 'loss', 'last'])
     parser.add_argument('-d', '--dataset_type', type=str, default='test', required=False, choices=['train', 'validation', 'test'])
+    parser.add_argument('-n', '--result_num', type=int, default=10)
     args = parser.parse_args()
     
     main(args)

@@ -9,6 +9,7 @@
     * `loss`(default): Valdiation loss가 최소일 때 모델을 resume.
     * `last`: Last epoch에 저장된 모델을 resume.
 * [`-d`, `--dataset_type`]: (default: `test`) [`train`, `validation`, `test`] 중 하나를 선택.
+* [`-n`, `--result_num`]: (default: `10`) 가시화할 랜덤 데이터 개수.
 
 
 #### 1.2 Command
