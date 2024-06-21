@@ -59,7 +59,7 @@ class Trainer:
         assert self.config.color_channel in [1, 3], colorstr('red', 'image channel must be 1 or 3, check your config..')
 
         # init model, dataset, dataloader, etc.
-        self.modes = ['train', 'validation'] if self.is_training_mode else ['test']
+        self.modes = ['train', 'validation'] if self.is_training_mode else ['train', 'validation', 'test']
         self.model = self._init_model(self.config, self.mode)
         self.dataloaders = get_data_loader(self.config, self.modes, self.is_ddp)
         self.training_logger = TrainingLogger(self.config, self.is_training_mode)
