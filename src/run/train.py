@@ -32,7 +32,7 @@ def main(args):
     env_setup()
     
     # training (cpu/single_gpu or multi_gpu)
-    if len(config.device) <= 1 or config.device == ['cpu', 'mps']:
+    if len(config.device) <= 1 or config.device in ['cpu', 'mps']:
         single_gpu_train(args, config)
     else:
         os.environ['CUDA_VISIBLE_DEVICES'] = ','.join(map(str, config.device))
