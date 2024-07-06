@@ -96,7 +96,7 @@ class Trainer:
         do_resume = mode == 'resume' or (mode == 'validation' and self.resume_path)
         model = get_model(config, self.device)
 
-        # resume model or resume model after applying peft
+        # resume model
         if do_resume:
             model = _resume_model(self.resume_path, self.device, config.is_rank_zero)
 
