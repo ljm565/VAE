@@ -41,7 +41,6 @@ class Trainer:
         self.is_rank_zero = True if not self.is_ddp or (self.is_ddp and device == 0) else False
         self.config = config
         self.world_size = len(self.config.device) if self.is_ddp else 1
-        self.dataloaders = {}
         if self.is_training_mode:
             self.save_dir = make_project_dir(self.config, self.is_rank_zero)
             self.wdir = self.save_dir / 'weights'
