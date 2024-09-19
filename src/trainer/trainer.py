@@ -101,7 +101,7 @@ class Trainer:
 
         # init ddp
         if self.is_ddp:
-            torch.nn.parallel.DistributedDataParallel(model, device_ids=[self.device])
+            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[self.device])
         
         return model
 
@@ -223,7 +223,8 @@ class Trainer:
                 # upadate logs and save model
                 self.training_logger.update_phase_end(phase, printing=True)
                 if is_training_now:
-                    self.training_logger.save_model(self.wdir, self.model)
+                    model = self.model.module if self.is_ddp else self.model
+                    self.training_logger.save_model(self.wdir, model)
                     self.training_logger.save_logs(self.save_dir)
         
 
